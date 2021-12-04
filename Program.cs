@@ -9,13 +9,19 @@ namespace KolatzHypothesis_3xplus1
             long y;
 
             Console.Write("Input natural number: ");
+
             var input = Console.ReadLine();
 
-            Int64.TryParse(input, out y);
+            while (!Int64.TryParse(input, out y))
+            {
+                Console.WriteLine("Input only an integer");
+                input = Console.ReadLine();
+            }
 
-            var hailstones = Calculator.Calculation(y);
+            var hailstones = Calculator_3xplus1.Calculation(y);
 
             Console.WriteLine("Output hailstones: ");
+
             foreach (long i in hailstones)
             {
                 Console.WriteLine($"    {(hailstones.IndexOf(i)) + 1}:    {i} ");

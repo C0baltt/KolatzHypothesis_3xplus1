@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace KolatzHypothesis_3xplus1
 {
-    public class Calculator
+    public class Calculator_3xplus1
     {
         public static List<long> Calculation(long x)
         {

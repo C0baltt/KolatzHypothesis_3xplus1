@@ -5,4 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Steema.TeeGrid.NETCore" Version="1.2021.5.25" />
+  </ItemGroup>
+
 </Project>
