@@ -1,9 +1,34 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace KolatzHypothesis_3xplus1
 {
     public class Calculator_3xplus1
     {
+        public static long CalculateSequence(long minNumber, long maxNumber)
+        {
+            long maxCountValue = 0;
+
+            var hailstones = Calculation(minNumber);
+
+            int maxCountHeilstones = hailstones.Count;
+
+            for (long i = minNumber; i <= maxNumber; i++)
+            {
+                hailstones = Calculation(i);
+
+                if (maxCountHeilstones < hailstones.Count)
+                {
+                    maxCountHeilstones = hailstones.Count;
+                    maxCountValue = i;
+                }
+
+                Console.WriteLine($"Present value of hailstone {i}: ");
+            }
+
+            return maxCountValue;
+        }
+
         public static List<long> Calculation(long x)
         {
             List<long> hailstones = new(1);
@@ -29,28 +54,5 @@ namespace KolatzHypothesis_3xplus1
                 hailstones.Add(hailstone);
             }
         }
-
-        public static long CalculateSequence(long minNumber, long maxNumber)
-        {
-            long maxCountValue = 0;
-
-            var hailstones = Calculation(minNumber);
-
-            int maxCountHeilstones = hailstones.Count;
-
-            for (long i = minNumber; i <= maxNumber; i++)
-            {
-                hailstones = Calculation(i);
-
-                if (maxCountHeilstones < hailstones.Count)
-                {
-                    maxCountHeilstones = hailstones.Count;
-                    maxCountValue = i;
-                }
-            }
-
-            return maxCountValue;
-        }
-
     }
 }
