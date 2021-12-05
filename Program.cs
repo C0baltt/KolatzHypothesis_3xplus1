@@ -12,9 +12,9 @@ namespace KolatzHypothesis_3xplus1
             Console.Write("Input end value ");
             long maxValue = Input.InputValues();
 
-            var hailstone = Calculator_3xplus1.CalculateSequence(minValue, maxValue);
+            var hailstone = Calculator_3xplus1.CalculateSequenceHailstones(minValue, maxValue);
 
-            var hailstones = Calculator_3xplus1.Calculation(hailstone);
+            var hailstones = Calculator_3xplus1.CalculateHailstones(hailstone);
 
             Console.WriteLine($"Output hailstones from {hailstone}: ");
 

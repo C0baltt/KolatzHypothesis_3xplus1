@@ -5,31 +5,31 @@ namespace KolatzHypothesis_3xplus1
 {
     public class Calculator_3xplus1
     {
-        public static long CalculateSequence(long minNumber, long maxNumber)
+        public static long CalculateSequenceHailstones(long minNumber, long maxNumber)
         {
             long maxCountValue = 0;
 
-            var hailstones = Calculation(minNumber);
+            var hailstones = CalculateHailstones(minNumber);
 
             int maxCountHeilstones = hailstones.Count;
 
             for (long i = minNumber; i <= maxNumber; i++)
             {
-                hailstones = Calculation(i);
+                hailstones = CalculateHailstones(i);
 
-                if (maxCountHeilstones < hailstones.Count)
+                if (maxCountHeilstones <= hailstones.Count)
                 {
                     maxCountHeilstones = hailstones.Count;
                     maxCountValue = i;
                 }
 
-                Console.WriteLine($"Present value of hailstone {i}: ");
+                Console.WriteLine($"Present value of hailstone: {i} ");
             }
 
             return maxCountValue;
         }
 
-        public static List<long> Calculation(long x)
+        public static List<long> CalculateHailstones(long x)
         {
             List<long> hailstones = new(1);
             long hailstone = x;
