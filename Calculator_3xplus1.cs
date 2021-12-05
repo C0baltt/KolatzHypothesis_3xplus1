@@ -28,7 +28,29 @@ namespace KolatzHypothesis_3xplus1
 
                 hailstones.Add(hailstone);
             }
-
         }
+
+        public static long CalculateSequence(long minNumber, long maxNumber)
+        {
+            long maxCountValue = 0;
+
+            var hailstones = Calculation(minNumber);
+
+            int maxCountHeilstones = hailstones.Count;
+
+            for (long i = minNumber; i <= maxNumber; i++)
+            {
+                hailstones = Calculation(i);
+
+                if (maxCountHeilstones < hailstones.Count)
+                {
+                    maxCountHeilstones = hailstones.Count;
+                    maxCountValue = i;
+                }
+            }
+
+            return maxCountValue;
+        }
+
     }
 }

@@ -6,28 +6,24 @@ namespace KolatzHypothesis_3xplus1
     {
         static void Main(string[] args)
         {
-            long y;
+            Console.Write("Input start value ");
+            long minValue = Input.InputValues();
 
-            Console.Write("Input natural number: ");
+            Console.Write("Input end value ");
+            long maxValue = Input.InputValues();
 
-            var input = Console.ReadLine();
+            var hailstone = Calculator_3xplus1.CalculateSequence(minValue, maxValue);
 
-            while (!Int64.TryParse(input, out y))
-            {
-                Console.WriteLine("Input only an integer");
-                input = Console.ReadLine();
-            }
+            var hailstones = Calculator_3xplus1.Calculation(hailstone);
 
-            var hailstones = Calculator_3xplus1.Calculation(y);
-
-            Console.WriteLine("Output hailstones: ");
+            Console.WriteLine($"Output hailstones from {hailstone}: ");
 
             foreach (long i in hailstones)
             {
                 Console.WriteLine($"    {(hailstones.IndexOf(i)) + 1}:    {i} ");
             }
 
-            Console.WriteLine($"Count hailstones: {hailstones.Count}");
+            Console.WriteLine($"Count hailstones: {hailstones.Count}, from number: {hailstone}");
         }
     }
 }
