@@ -15,6 +15,8 @@ namespace KolatzHypothesis_3xplus1
 
             for (long i = minNumber; i <= maxNumber; i++)
             {
+                Console.WriteLine($"Present value of hailstone: {i} ");
+
                 hailstones = CalculateHailstones(i);
 
                 if (maxCountHeilstones <= hailstones.Count)
@@ -22,17 +24,15 @@ namespace KolatzHypothesis_3xplus1
                     maxCountHeilstones = hailstones.Count;
                     maxCountValue = i;
                 }
-
-                Console.WriteLine($"Present value of hailstone: {i} ");
             }
 
             return maxCountValue;
         }
 
-        public static List<long> CalculateHailstones(long x)
+        public static List<long> CalculateHailstones(long number)
         {
             List<long> hailstones = new(1);
-            long hailstone = x;
+            long hailstone = number;
 
             while (true)
             {

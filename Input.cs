@@ -4,13 +4,6 @@ namespace KolatzHypothesis_3xplus1
 {
     public static class Input
     {
-        public static long InputValues()
-        {
-            var value = VerifyValue();
-            
-            return value;
-        }
-
         public static long VerifyValue()
         {
             long y;

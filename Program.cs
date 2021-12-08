@@ -7,10 +7,10 @@ namespace KolatzHypothesis_3xplus1
         static void Main(string[] args)
         {
             Console.Write("Input start value ");
-            long minValue = Input.InputValues();
+            long minValue = Input.VerifyValue();
 
             Console.Write("Input end value ");
-            long maxValue = Input.InputValues();
+            long maxValue = Input.VerifyValue();
 
             var hailstone = Calculator_3xplus1.CalculateSequenceHailstones(minValue, maxValue);
 
